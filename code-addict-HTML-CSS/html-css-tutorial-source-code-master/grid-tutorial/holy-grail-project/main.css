@@ -1,0 +1,154 @@
+* {
+  padding: 0;
+  margin: 0;
+}
+
+body {
+  color: #f7ebe8;
+}
+
+.container {
+  min-height: 100vh;
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: 75px 50px 1fr 50px 50px;
+}
+
+#header {
+  background-color: #e54b4b;
+  display: flex;
+  /* for horizontal */
+  justify-content: center;
+  /* for vertical */
+  align-items: center;
+}
+
+#content {
+  color: #1b1b1e;
+  background-color: #f5f5f5;
+  line-height: 1.5;
+  padding: 25px;
+}
+
+#nav ul {
+  /* left-right/top-bottom */
+  padding: 0 10px;
+  /* 50 bc of grid-template-rows is also 50px */
+  height: 50px;
+  /* removes bullet points */
+  list-style-type: none;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+#nav,
+#aside {
+  background-color: goldenrod;
+}
+
+#nav ul a {
+  text-decoration: none;
+  color: brown;
+  /* bigger screen */
+  background: transparent;
+  font-size: 20px;
+  transition: color 2s ease, background 2s ease;
+}
+
+#nav ul a:hover {
+  color: black;
+  background: transparent;
+}
+
+#aside {
+  padding: 0 20px;
+}
+
+#aside ul {
+  list-style-type: none;
+  height: 50px;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+#aside ul .fab {
+  font-size: 20px;
+  color: #e54b4b;
+  transition: color 2s ease;
+}
+
+#aside ul .fab:hover {
+  color: #1b1b1e;
+}
+
+#footer {
+  background-color: #e54b4b;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#footer h4 {
+  font-size: 17px;
+  color: #1b1b1e;
+}
+
+@media screen and (min-width: 776px) {
+  .container {
+    grid-template-columns: auto 1fr auto;
+    grid-template-rows: 75px 1fr 50px;
+    grid-template-areas:
+    /* we write the values first and then we distribute them */
+      "header header header"
+      "navbar content aside"
+      "footer footer footer";
+  }
+  #header {
+    /* this is the distribution */
+    grid-area: header;
+  }
+  #nav {
+    /* this is the distribution */
+    grid-area: navbar;
+  }
+  #content {
+    /* this is the distribution */
+    grid-area: content;
+  }
+  #aside {
+    /* this is the distribution */
+    grid-area: aside;
+  }
+  #footer {
+    /* this is the distribution */
+    grid-area: footer;
+  }
+  #nav ul {
+    /* stretches the items in the whole nav */
+    height: 100%;
+    /* makes the items be listed in a column */
+    flex-direction: column;
+    /* makes all the items go to the top */
+    justify-content: flex-start;
+    padding: 0;
+  }
+  #nav ul a {
+    width: 100px;
+    text-align: center;
+    /* when hovering over, makes the whole area accessible, not just the letters themselves */
+    display: block;
+    padding: 10px;
+  }
+  #nav ul a:hover {
+    background: chocolate;
+  }
+
+  #aside ul {
+    height: 100%;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+  }
+}

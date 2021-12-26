@@ -1,0 +1,719 @@
+body {
+  /* google fonts */
+  font-family: "Roboto", sans-serif;
+  background: #f5f5f5;
+}
+
+/* this is a variable */
+:root {
+  --mainBlue: #2b98f0;
+}
+
+* {
+  padding: 0;
+  margin: 0;
+  /* makes changes, such as padding, be aplied on the inside, rather than outside */
+  box-sizing: border-box;
+}
+
+#header {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  border: 8px solid hotpink;
+}
+
+nav {
+  /* we don't want it ot grow/or shrink */
+  flex: 0 0 auto;
+  border: 8px solid sienna;
+}
+
+#banner {
+  /* we want it ot grow/not to shrink */
+  flex: 1 0 auto;
+  border: 8px solid green;
+}
+
+/* NAV STYLE */
+nav ul {
+  list-style-type: none;
+}
+
+nav ul li a {
+  /* so that they span all the way across the screen, not just in their little boxes */
+  display: block;
+  color: var(--mainBlue);
+  background: transparent;
+  text-decoration: none;
+  padding: 10px;
+  font-size: 20px;
+  transition: color 1s ease, background 1s ease, padding 1s ease;
+}
+
+nav ul li a:hover {
+  color: #f5f5f5;
+  padding-left: 60px;
+  background: var(--mainBlue);
+}
+
+#nav-top {
+  border: 5px solid blue;
+  display: flex;
+  justify-content: space-between;
+  padding: 20px 20px 20px 10px;
+}
+
+#nav-top h3 {
+  font-size: 30px;
+  padding: 5px;
+  color: var(--mainBlue);
+  border: 3px solid;
+  transition: color 1.5s ease, background 1.5s ease;
+}
+
+#nav-top h3:hover {
+  background: var(--mainBlue);
+  color: #f5f5f5;
+}
+
+#menu-btn {
+  padding: 5px;
+  border: 2px solid var(--mainBlue);
+  cursor: pointer;
+  align-self: center;
+}
+
+/* bars on a button */
+.bar1,
+.bar2,
+.bar3 {
+  height: 5px;
+  width: 35px;
+  background-color: var(--mainBlue);
+  margin: 5px 0;
+  transition: transform 1s ease;
+}
+
+.turn .bar1 {
+  /* this is the rotation of the bars */
+  transform: rotate(-45deg) translate(-7px, 6px);
+}
+
+.turn .bar2 {
+  /* makes it disappear */
+  opacity: 0;
+}
+
+.turn .bar3 {
+  transform: rotate(45deg) translate(-7px, -8px);
+}
+/* end of bars on a button*/
+
+@media screen and (min-width: 690px) {
+  nav {
+    display: flex;
+    align-items: baseline;
+    flex-wrap: wrap;
+    padding: 0 20px;
+  }
+  #menu-btn {
+    display: none;
+  }
+  nav ul {
+    flex: 1 1 auto;
+    /* the important is so that the ul can remain after you've clicked the menu-btn on a small screen */
+    display: flex !important;
+    flex-wrap: wrap;
+  }
+  nav ul li {
+    flex: 1 0 125px;
+  }
+  nav ul .icon {
+    flex: 0 0 20px;
+  }
+  nav ul li .link-icon {
+    color: #f5f5f5;
+    background: var(--mainBlue);
+  }
+  nav ul li .link-icon:hover {
+    background: #008dff;
+  }
+  nav ul a {
+    text-align: center;
+  }
+  nav ul a:hover {
+    padding: 10px !important;
+  }
+  #nav-top {
+    padding: 10px;
+  }
+}
+/* END OF NAV STYLE */
+
+/* BANNER STYLE */
+#banner {
+  background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+    url(./images/banner-img.jpeg);
+  background-attachment: fixed;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+#banner-box {
+  border: 4px solid orange;
+  color: #f5f5f5;
+  text-align: center;
+}
+#banner-title {
+  font-size: 60px;
+}
+.banner-underline {
+  border: 3px solid var(--mainBlue);
+  width: 200px;
+  margin: 10px auto;
+}
+.banner-subtitle {
+  margin: 20px 0 40px 0;
+  font-size: 25px;
+}
+#banner-box a {
+  /* a link is generaly in inline element, but now we're making it a block element but we don't want it to spread all accross the screen so that's why it's "inline-block" */
+  display: inline-block;
+  padding: 10px;
+  font-size: 40px;
+  text-decoration: none;
+  color: #f5f5f5;
+  /* we're adding the same background so that when we hover we can see it  */
+  background: var(--mainBlue);
+  /* we're adding this border now bc if we add it just in hover, the text above is going ot shift on each hover */
+  border: 3px solid var(--mainBlue);
+  transition: background 2s ease, border 0.5s ease;
+}
+#banner-box a:hover {
+  color: var(--mainBlue);
+  background: transparent;
+}
+/* END OF BANNER STYLE */
+
+/* SKILLS SYLE */
+.title {
+  margin: 10px 0 10px 0;
+  cursor: pointer;
+}
+.title-text {
+  font-size: 60px;
+  color: #575757;
+}
+.title-underline {
+  width: 50px;
+  border: 3px solid #2b98f0;
+  transition: width 4s ease, border 4s ease;
+}
+/* when we hover over the whole title, changes are gonna be applied to title-underline */
+.title:hover .title-underline {
+  width: 200px;
+  border: 3px solid red;
+}
+
+#skills {
+  border: 6px solid brown;
+  padding: 40px;
+}
+
+.skill {
+  border: 2px solid springgreen;
+  text-align: center;
+  margin: 20px 0;
+}
+.skill .fas {
+  color: var(--mainBlue);
+  padding: 20px;
+  /* makes the border a circle */
+  border-radius: 50%;
+  font-size: 60px;
+  transition: transform 0.5s ease, background 0.5s ease, color 0.5 ease;
+}
+.skill .fas:hover {
+  transform: scale(0.7);
+  background: var(--mainBlue);
+  color: #f5f5f5;
+}
+
+.skill h3 {
+  /* top/right/bottom/left */
+  margin: 10px 0 15px 0;
+  font-size: 30px;
+  color: var(--mainBlue);
+}
+.skill p {
+  line-height: 1.5em;
+  /* makes the text go to the left and not span accross */
+  width: 75%;
+  /* makes the text centered */
+  margin: 0 auto;
+}
+
+@media screen and (min-width: 576px) {
+  .skills-center {
+    max-width: 90vw;
+    /* "margin 0 auto" centers it */
+    margin: 0 auto;
+    display: flex;
+    /* they're pushed out as far as they can be */
+    justify-content: space-between;
+    flex-wrap: wrap;
+  }
+  .skill {
+    /* we don't want them to grow but we also don't want them to shrink */
+    /* the 2em is the gap between them */
+    flex: 0 1 calc(50% - 2em);
+  }
+}
+
+@media screen and (min-width: 992px) {
+  .skill {
+    /* we don't want them to grow but we want them to shrink */
+    /* the 2em is the gap between them */
+    flex: 0 1 calc(25% - 2em);
+  }
+}
+/* END OF SKILLS SYLE */
+
+/* ABOUT STYLE */
+#about {
+  border: 6px solid plum;
+  padding: 40px;
+  background: #c9c9c9;
+}
+#about-text,
+#about-video {
+  padding: 40px;
+}
+#about-text h2 {
+  color: #f5f5f5;
+  font-size: 35px;
+}
+#about-text p {
+  /* only top/bottom */
+  margin: 20px 0;
+}
+#about-text a {
+  text-decoration: none;
+  display: inline-block;
+  font-size: 30px;
+  padding: 10px;
+  color: #f5f5f5;
+  border: 2px solid var(--mainBlue);
+  background: var(--mainBlue);
+  transition: background 1s ease, border-radius 1s ease, color 1s ease;
+}
+#about-text a:hover {
+  background: transparent;
+  border-radius: 30px;
+  color: var(--mainBlue);
+}
+
+@media screen and (min-width: 576px) {
+  #about {
+    display: flex;
+  }
+  #about-text {
+    min-height: 40vh;
+    /* don't grow and don't shrink */
+    flex: 0 0 60%;
+  }
+  #about-video {
+    min-height: 40vh;
+    flex: 0 0 40%;
+  }
+}
+/* END OF ABOUT STYLE */
+
+/* SERVICES STYLE */
+#services {
+  border: 4px solid crimson;
+  padding: 40px;
+}
+.service {
+  border: 2px solid green;
+  /* top-bottom/left-right */
+  margin: 30px 0;
+  display: flex;
+}
+.service-icon {
+  font-size: 60px;
+  color: var(--mainBlue);
+  margin-right: 20px;
+}
+.service-info {
+  margin-top: 10px;
+  line-height: 1.5;
+}
+.service-subtitle {
+  text-transform: capitalize;
+  color: var(--mainBlue);
+  font-size: 25px;
+}
+
+.service:hover .fa,
+.service:hover .fab,
+.service:hover .fas,
+.service:hover .service-subtitle {
+  color: rgba(0, 0, 0, 0.8);
+}
+.service:hover .service-info {
+  color: rgba(147, 147, 147);
+}
+
+@media screen and (min-width: 576px) {
+  .services-center {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+  }
+  .service {
+    flex: 0 0 calc(50% - 1rem);
+  }
+}
+@media screen and (min-width: 972px) {
+  .service {
+    flex: 0 0 calc(33.3% - 1rem);
+  }
+}
+/* END OF  SERVICES STYLE */
+
+/* PORTFOLIO */
+#portfolio {
+  border: 4px solid springgreen;
+  padding: 40px;
+  background: #c9c9c9;
+}
+.work {
+  border: 4px solid steelblue;
+  position: relative;
+  background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7));
+  max-height: 300px;
+  border-radius: 10px;
+  margin: 10px 0;
+  overflow: hidden;
+}
+
+#portfolio img {
+  display: block;
+  width: 100%;
+  max-height: 300px;
+  cursor: pointer;
+  opacity: 1;
+  transition: opacity 2s ease;
+}
+#portfolio img:hover {
+  opacity: 0.5;
+}
+.img-overlay {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 100px;
+  /* hides overlay */
+  margin-bottom: -100px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 20px;
+  background: rgba(147, 147, 147);
+  /* shows overlay */
+  transition: margin 2s ease;
+}
+.work:hover .img-overlay {
+  /* shows the overlay when you hover over */
+  margin-bottom: 0;
+}
+.img-text h3 {
+  text-transform: uppercase;
+  font-size: 20px;
+  margin-bottom: 5px;
+  color: #f5f5f5;
+}
+.img-overlay .fa {
+  font-size: 30px;
+  color: var(--mainBlue);
+  padding: 10px;
+  background: #f5f5f5;
+  border-radius: 15px;
+  transition: transform 2s ease, background 2s ease, color 2s ease;
+}
+
+.img-overlay .fa:hover {
+  transform: translateY(-7px);
+  background: var(--mainBlue);
+  color: #f5f5f5;
+}
+
+.section-btn {
+  text-align: center;
+  margin: 20px 0 10px 0;
+}
+
+.section-btn a {
+  text-decoration: none;
+  display: inline-block;
+  padding: 0.5em;
+  font-size: 20px;
+  color: #f5f5f5;
+  background: var(--mainBlue);
+  transition: background 2s ease, color 2s ease;
+}
+.section-btn a:hover {
+  color: var(--mainBlue);
+  background: #f5f5f5;
+}
+
+.section-btn .fa {
+  font-size: 40px;
+  margin-right: 10px;
+}
+
+/* portfolio responsive  */
+@media screen and (min-width: 576px) {
+  .portfolio-center {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+  }
+  .work {
+    flex: 0 0 calc(50% - 2rem);
+  }
+}
+
+@media screen and (min-width: 776px) {
+  .work {
+    flex: 0 0 calc(33.3% - 2rem);
+  }
+}
+/* END OF PORTFOLIO */
+
+/* NUMBERS */
+#numbers {
+  border: 4px solid purple;
+  padding: 40px;
+}
+
+.number {
+  border: 3px solid palevioletred;
+  margin: 20px 0;
+  text-align: center;
+  transition: transform 2s ease;
+}
+.number:hover {
+  transform: translateY(-10px);
+  cursor: pointer;
+}
+
+.number .fa {
+  font-size: 60px;
+  color: var(--mainBlue);
+}
+
+.number h2 {
+  font-size: 40px;
+  margin: 10px 0;
+  font-weight: 900;
+}
+.number h5 {
+  font-size: 23px;
+  color: #c9c9c9;
+}
+/* responsive numbers */
+@media screen and (min-width: 576px) {
+  .numbers-center {
+    min-width: 90vw;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+  }
+  .number {
+    flex: 0 0 calc(50% - 2rem);
+  }
+}
+@media screen and (min-width: 977px) {
+  .number {
+    flex: 0 0 calc(25% - 2rem);
+  }
+}
+/* END OF NUMBERS */
+
+/* ТЕАМ */
+#team {
+  border: 6px solid green;
+  padding: 40px;
+  background: #959595;
+}
+.team-member {
+  border: 4px solid pink;
+  background-color: #f5f5f5;
+  margin: 20px 0;
+}
+.team-member img {
+  display: block;
+  width: 100%;
+  max-height: 300px;
+}
+.img-footer {
+  padding: 20px;
+  display: flex;
+  justify-content: space-between;
+}
+.footer-info h3 {
+  color: var(--mainBlue);
+}
+.footer-info h5 {
+  color: #959595;
+  margin: 10px 0;
+  text-transform: uppercase;
+}
+.social-icons .fab {
+  color: #959595;
+  margin: 0 5px;
+}
+.footer-icon {
+  font-size: 40px;
+  color: var(--mainBlue);
+  opacity: 0;
+  align-self: center;
+  transition: transform 2s ease, opacity 2s ease;
+}
+.team-member:hover .footer-icon {
+  transform: rotate(-90deg);
+  opacity: 1;
+}
+
+/* team responsive */
+@media screen and (min-width: 576px) {
+  #team-center {
+    min-width: 90vw;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+  }
+  .team-member {
+    flex: 0 0 calc(50% - 2rem);
+  }
+}
+@media screen and (min-width: 776px) {
+  .team-member {
+    flex: 0 0 calc(25% - 2rem);
+  }
+}
+/*  END OF ТЕАМ */
+
+/* CUSTOMER REVIEWS */
+#customers {
+  border: 4px solid crimson;
+  padding: 40px;
+  background-color: #191919;
+}
+.customer {
+  border: 4px solid darkgoldenrod;
+  color: #f5f5f5;
+  margin: 20px 0;
+  text-align: center;
+}
+.customer img {
+  border-radius: 50%;
+  max-width: 200px;
+}
+
+.customer h3 {
+  color: var(--mainBlue);
+  margin: 10px 0;
+}
+
+.customer h5 {
+  text-transform: uppercase;
+  color: #959595;
+}
+.customer p {
+  line-height: 1.5;
+  width: 75%;
+  margin: 10px auto;
+}
+/* responsive customer */
+@media screen and (min-width: 576px) {
+  .customers-center {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+  }
+  .customer {
+    flex: 0 0 calc(33.3% - 3rem);
+  }
+}
+/* END OF CUSTOMER REVIEWS */
+
+/* CONTACT */
+#contact {
+  padding: 40px;
+  background-color: var(--mainBlue);
+  color: #f5f5f5;
+}
+#contact .title-underline {
+  border-color: #f5f5f5;
+}
+.item-info {
+  display: flex;
+  margin: 20px 0;
+  font-size: 30px;
+}
+.item-info .fa {
+  margin-right: 20px;
+}
+form input {
+  display: block;
+  width: 100%;
+  margin: 10px 0;
+  font-size: 20px;
+  padding: 10px;
+  background: transparent;
+  border: none;
+  border-bottom: 4px solid #f5f5f5;
+}
+form input::placeholder {
+  color: #f5f5f5;
+}
+
+#customer-info a {
+  display: block;
+  padding: 20px;
+  margin-top: 30px;
+  text-decoration: none;
+  font-size: 30px;
+  display: flex;
+  justify-content: space-around;
+  color: #f5f5f5;
+  background-color: #191919;
+  transition: background 2s ease;
+}
+#customer-info a:hover {
+  background: #c9c9c9;
+}
+/* customer responsive */
+@media screen and (min-width: 776px) {
+  .contact-center {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+  }
+  #company-info {
+    flex: 0 0 calc(50% - 2rem);
+  }
+  #customer-info {
+    flex: 0 0 calc(50% - 2rem);
+  }
+}
+/* END OF CONTACT */

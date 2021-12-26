@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>GRID TUTORIAL</title>
+    <link rel="stylesheet" href="./main.css" />
+
+    <!-- GRID -->
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+      }
+      .container {
+        display: grid;
+        height: 100vh;
+        grid-template-rows: 100px auto 100px;
+        grid-template-columns: 100px auto 100px;
+
+        grid-template-areas:
+          "banner banner banner"
+          "sidebar content ads"
+          "footer footer footer";
+      }
+
+      .cell-1 {
+        grid-area: banner;
+      }
+      .cell-2 {
+        grid-area: sidebar;
+      }
+      .cell-3 {
+        grid-area: content;
+      }
+      .cell-4 {
+        grid-area: ads;
+      }
+      .cell-5 {
+        grid-area: footer;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div class="cell cell-1">Banner</div>
+      <div class="cell cell-2">Sidebar</div>
+      <div class="cell cell-3">Content</div>
+      <div class="cell cell-4">Ads</div>
+      <div class="cell cell-5">Footer</div>
+    </div>
+  </body>
+</html>

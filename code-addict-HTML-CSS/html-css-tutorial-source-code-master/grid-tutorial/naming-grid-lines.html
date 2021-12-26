@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>GRID TUTORIAL</title>
+    <link rel="stylesheet" href="./main.css" />
+
+    <!-- GRID -->
+    <style>
+      .container {
+        display: grid;
+        /* you can name them however you like, you just have to use "start" and "end" */
+        grid-template-columns: [start] 100px[line-2] 100px[line-3] 100px[end];
+        grid-template-rows: [start]100px[line-2] 100px[end];
+      }
+
+      .cell-1 {
+        grid-column-start: start;
+        grid-column-end: end;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div class="cell cell-1">Cell 1</div>
+      <div class="cell cell-2">Cell 2</div>
+      <div class="cell cell-3">Cell 3</div>
+      <div class="cell cell-4">Cell 4</div>
+      <div class="cell cell-5">Cell 5</div>
+      <div class="cell cell-6">Cell 6</div>
+    </div>
+  </body>
+</html>

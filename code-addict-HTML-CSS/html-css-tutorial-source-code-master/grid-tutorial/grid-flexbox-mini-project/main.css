@@ -1,0 +1,106 @@
+* {
+  /* gets rid of pre-fixed m/p */
+  padding: 0;
+  margin: 0;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+}
+
+.item {
+  flex: 0 0 300px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  font-size: 60px;
+  text-transform: uppercase;
+}
+
+.item-1 {
+  background-image: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)),
+    url(./desk.jpg);
+  /* fills in the whole div */
+  background-size: cover;
+  /* hides the picture outside the div */
+  overflow: hidden;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+.item-2 {
+  background-color: red;
+}
+.item-3 {
+  background-color: greenyellow;
+}
+.item-4 {
+  background-color: blueviolet;
+}
+
+/* AFTER 576px this is applied  */
+@media screen and (min-width: 576px) {
+  .container {
+    display: grid;
+    /* fills in the whole screen */
+    height: 100vh;
+    /* splits columns into 5 equal parts */
+    grid-template-columns: repeat(5, 1fr);
+    /* splits rows into 4 equal parts */
+    grid-template-rows: repeat(4, 1fr);
+    grid-template-areas:
+    /* starting top to bottom each row, using the names we set earlier in "grid-area" */
+      "one one  two three three "
+      "one one four five five "
+      "six seven seven five five "
+      "six  eight nine nine ten ";
+  }
+
+  .item-1 {
+    background: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)),
+      url(./desk.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    color: aliceblue;
+    font-size: 50px;
+    /* gives the square number 1 a grid-area called "one" */
+    grid-area: one;
+  }
+  .item-2 {
+    background: greenyellow;
+    grid-area: two;
+  }
+  .item-3 {
+    background: yellow;
+    grid-area: three;
+  }
+  .item-4 {
+    background: darkcyan;
+    grid-area: four;
+  }
+  .item-5 {
+    background: darksalmon;
+    grid-area: five;
+  }
+  .item-6 {
+    background: darkorange;
+    grid-area: six;
+  }
+  .item-7 {
+    background: darkviolet;
+    grid-area: seven;
+  }
+  .item-8 {
+    background: darkolivegreen;
+    grid-area: eight;
+  }
+  .item-9 {
+    background: darkgoldenrod;
+    grid-area: nine;
+  }
+  .item-10 {
+    background: darkblue;
+    grid-area: ten;
+  }
+}

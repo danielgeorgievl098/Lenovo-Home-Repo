@@ -1,0 +1,108 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css"> <!-- this is a bootstrap link --> 
+    <link rel="stylesheet" href="Static/CSS/style.css">
+    <title>This Is Project 1</title>
+</head>
+<body>
+    <div class="Container-1">       <!-- FIRST CHALLENGE -->
+        <h2>Challenge 1: Your Age in Days </h2>
+
+        <div class="flex-box-container-1">
+
+            <div>
+                <button class="btn btn-primary" onclick="AgeInDays()">Click Me</button> <!-- calls the funtion AgeInDays when clicked  -->
+            </div>
+
+            <div>
+                <button class="btn btn-danger" onclick="reset()">Reset</button> <!-- calls the funtion "reset" when clicked -->
+            </div>
+        </div>
+        <divc class="flex-box-container-1">
+            <div id="flex-box-result"></div>
+        </div>
+    </div>
+
+
+    <div class="Container-2">       <!-- SECOND CHALLENGE -->
+        <h2>Challenge 2: Cat Generator</h2>
+        <button class="btn btn-success" id="cat-gen" onclick="generateCat()">Generate Cate</button>
+
+        <div class="flex-box-container-2" id="flex-cat-gen">
+     
+        </div>
+    </div>
+                                    <!-- THIRD CHALLENGE-->
+    <div class="Container-3">
+        <h2>Challenge 3: Rock, Paper, Scissors</h2>
+        <div class="flex-box-rps" id="flex-box-rps-div">
+            <img src="https://i.dlpng.com/static/png/6409592_preview.png" id="rock" height="155" width="155" onclick="rpsGame(this)" alt="">
+            <img src="https://www.pngitem.com/pimgs/m/266-2667795_rock-paper-scissors-png-transparent-png.png" id="paper" height="155" width="155" onclick="rpsGame(this)" alt="">
+            <img src="https://www.seekpng.com/png/detail/111-1114370_rock-paper-scissors-rock-paper-scissors-clipart.png" id="scissors" height="155" width="155" onclick="rpsGame(this)" alt="">
+        </div>
+    </div>
+                                        <!-- FORTH CHALLENGE-->
+    <div class="Container-4">
+        <h2 id="change-my-color">Challenge 4: Change All The Buttons' Color</h2>
+        <div class="flex-box-pick-color">
+            <form action="">
+                <select name="backdrop" id="background" onchange="buttonColorChange(this)">
+                    <option value="random">Random</option>
+                    <option value="red">Red</option>
+                    <option value="green">Green</option>
+                    <option value="reset">Reset</option>
+                </select>
+            </form>
+            <button class="btn btn-primary">Wee!</button>
+            <button class="btn btn-danger">Yahoo!</button>
+            <button class="btn btn-warning">Google!</button>
+            <button class="btn btn-success">Facebook!</button>
+        </div>
+    </div>
+                                    <!-- FIFTH CHALLENGE-->
+    <div class="Container-5">
+        <h2>Challenge 5: Blackjack</h2>
+        <h3><span id="blackjack-result">Let's Play</span></h3>
+
+        <div class="flex-blackjack-row-1">
+            <div id="your-box">
+                <h2>You: <span id="your-blackjack-result">0</span></h2>
+            </div>
+
+            <div id="dealer-box">
+                <h2>Dealer: <span id="dealer-blackjack-result">0</span></h2>
+            </div>
+        </div>
+
+        <div class="flex-blackjack-row-2">
+            <div>
+                <button class="btn-lg btn-primary mr-2" id="blackjack-hit-btn">Hit</button>
+                <button class="btn-lg btn-warning mr-2" id="blackjack-stand-btn">Stand</button>
+                <button class="btn-lg btn-danger mr-2" id="blackjack-deal-btn">Deal</button>
+            </div>
+        </div>
+
+        <div class="flex-blackjack-row-3">
+            <table>
+                <tr>
+                    <th>Wins</th>
+                    <th>Losses</th>
+                    <th>Draws</th>
+                </tr>
+
+                <tr>
+                    <td><span id="wins">0</span></td>
+                    <td><span id="losses">0</span></td>
+                    <td><span id="draws">0</span></td>
+                </tr>
+            </table>
+        </div>
+
+    </div>
+
+    <script src="static/js/scripts.js"></script>
+</body>
+</html>

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>GRID TUTORIAL</title>
+    <link rel="stylesheet" href="./main.css" />
+
+    <!-- GRID -->
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+      }
+
+      .container {
+        height: 100vh;
+        display: grid;
+        /* 50% is half of the height (in this case 100vh) */
+        /* grid-template-columns: 100px 50% 4rem; */
+
+        /* minmax(minimum value, maximum value) */
+        grid-template-columns: 100px minmax(4rem, 100%) 4rem;
+        grid-template-rows: 100px minmax(4rem, 100%) 4rem;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div class="cell cell-1">Cell 1</div>
+      <div class="cell cell-2">Cell 2</div>
+      <div class="cell cell-3">Cell 3</div>
+      <div class="cell cell-4">Cell 4</div>
+      <div class="cell cell-5">Cell 5</div>
+      <div class="cell cell-6">Cell 6</div>
+      <div class="cell cell-6">Cell 7</div>
+      <div class="cell cell-6">Cell 8</div>
+      <div class="cell cell-6">Cell 9</div>
+    </div>
+  </body>
+</html>
